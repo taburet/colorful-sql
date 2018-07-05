@@ -1,0 +1,35 @@
+<idea-plugin>
+    <id>prjx</id>
+    <name>Plugin display name here</name>
+    <version>1.0</version>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!--<fileTypeFactory implementation="prjx.SqlFileTypeFactory"/>-->
+        <lang.parserDefinition language="hzsql" implementationClass="prjx.SqlParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="hzsql" implementationClass="prjx.SqlSyntaxHighlighterFactory"/>
+
+        <languageInjector implementation="prjx.SqlInjector"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+</idea-plugin>

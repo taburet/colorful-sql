@@ -1,0 +1,51 @@
+{
+  parserClass="prjx.SqlParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Sql"
+  psiImplClassSuffix="Impl"
+  psiPackage="prjx.psi"
+  psiImplPackage="prjx.psi.impl"
+
+  elementTypeHolderClass="prjx.psi.SqlTypes"
+  elementTypeClass="prjx.psi.SqlElementType"
+  tokenTypeClass="prjx.psi.SqlTokenType"
+}
+
+sqlFile ::= expression
+
+expression ::=  simpleExpr (LOGICAL simpleExpr)*
+
+simpleExpr ::= PROPERTY OPERATOR LITERAL
+
+//private complex ::= (expression combiningOperator expression)
+
+//private operator ::= GTE | EQ
+
+//private value ::= INT | STR
+
+//combiningOperator ::= AND | OR
+
+
+
+//{
+//  parserClass="prjx.SqlParser"
+//
+//  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+//
+//  psiClassPrefix="Sql"
+//  psiImplClassSuffix="Impl"
+//  psiPackage="prjx.psi"
+//  psiImplPackage="prjx.psi.impl"
+//
+//  elementTypeHolderClass="prjx.psi.SqlTypes"
+//  elementTypeClass="prjx.psi.SqlElementType"
+//  tokenTypeClass="prjx.psi.SqlTokenType"
+//}
+//
+//sqlFile ::= item_*
+//
+//private item_ ::= (property|COMMENT|CRLF)
+//
+//property ::= (KEY? SEPARATOR VALUE?) | KEY
